@@ -1,0 +1,143 @@
+/* Reseteo básico y Tipografía */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #2C2F33; /* Plomo Antracita */
+    color: #FFFFFF; /* Blanco Puro */
+}
+
+/* Navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #2C2F33;
+    border-bottom: 1px solid #3c4046;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-loup {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.logo-sub {
+    font-size: 12px;
+    font-weight: 300;
+    color: #A0A5A8; /* Plomo Claro */
+    letter-spacing: 1px;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: #8C6239; /* Marrón Tierra Premium */
+    color: #FFFFFF;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #724e2c;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #FFFFFF;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 2px solid #FFFFFF;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #FFFFFF;
+    color: #2C2F33;
+}
+
+/* Sección Hero */
+.hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #A0A5A8;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Características */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 80px 50px;
+    background-color: #232528; /* Un plomo ligeramente más oscuro */
+}
+
+.feature-box {
+    text-align: center;
+    max-width: 300px;
+}
+
+.feature-box h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #8C6239;
+}
+
+.feature-box p {
+    color: #A0A5A8;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid #3c4046;
+}
+
+.footer-sub {
+    font-size: 12px;
+    color: #A0A5A8;
+    margin-top: 5px;
+}
