@@ -8,15 +8,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos Base y Variables de Diseño UX Premium */
+        /* Estilos Base - Paleta "Husky Tech" (Plomo, Blanco, Azul Hielo, Verde y Marrón) */
         :root {
-            --bg-principal: #0b0c10;
-            --bg-secundario: #1f2833;
-            --color-texto-claro: #ffffff;
-            --color-texto-mutado: #c5a880; /* Tono tierra/dorado sutil */
-            --color-gris-detalle: #a9a9a9;
-            --color-accent: #ff6b35; /* Naranja/Ámbar de alta conversión */
-            --color-accent-hover: #e0531f;
+            --bg-principal: #16181c; 
+            --bg-secundario: #22262d; 
+            --color-texto-claro: #f4f5f7; 
+            --color-texto-mutado: #a1aab5; 
+            --color-gris-detalle: #8b95a1;
+            --color-accent: #00d2ff; /* Azul Hielo (Ojo 1) */
+            --color-accent-hover: #00b8e6;
+            --color-verde-ia: #00e676; /* Verde Esmeralda (Ojo 2) */
+            --color-marron-tierra: #c78b5d; /* Marrón (Ojo 3) */
             --fuente-premium: 'Lexend', sans-serif;
             --transition-suave: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
@@ -45,8 +47,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(11, 12, 16, 0.95);
-            backdrop-filter: blur(10px);
+            background-color: rgba(22, 24, 28, 0.85);
+            backdrop-filter: blur(12px);
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
@@ -70,23 +72,10 @@
         }
 
         .logo-img {
-            width: 45px; /* Tamaño optimizado UX */
-            height: 45px;
+            width: 130px; 
+            height: auto;
+            max-height: 45px;
             object-fit: contain;
-        }
-
-        .logo-texto h1 {
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        .logo-texto span {
-            font-size: 10px;
-            color: var(--color-texto-mutado);
-            display: block;
-            margin-top: -3px;
         }
 
         nav ul {
@@ -112,8 +101,8 @@
 
         .btn-cotizar-header {
             background-color: transparent;
-            border: 2px solid var(--color-texto-mutado);
-            color: var(--color-texto-claro);
+            border: 1px solid var(--color-accent);
+            color: var(--color-accent);
             padding: 8px 16px;
             border-radius: 6px;
             font-size: 13px;
@@ -123,8 +112,9 @@
         }
 
         .btn-cotizar-header:hover {
-            background-color: var(--color-texto-mutado);
+            background-color: var(--color-accent);
             color: var(--bg-principal);
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
         }
 
         /* --- SECCIÓN HERO (INICIO) --- */
@@ -134,7 +124,8 @@
             align-items: center;
             justify-content: center;
             padding: 120px 20px 80px 20px;
-            background: linear-gradient(135deg, rgba(11,12,16,1) 40%, rgba(31,40,51,0.4) 100%), url('images/hero-bg.jpg');
+            /* Imagen en la nube */
+            background: linear-gradient(135deg, rgba(22,24,28,0.95) 20%, rgba(34,38,45,0.7) 100%), url('https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=1920');
             background-size: cover;
             background-position: center;
             text-align: center;
@@ -150,17 +141,16 @@
             line-height: 1.2;
             margin-bottom: 20px;
             letter-spacing: -1px;
+            background: linear-gradient(to right, var(--color-accent), var(--color-verde-ia));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-content p {
             font-size: 18px;
-            color: var(--color-gris-detalle);
+            color: var(--color-texto-claro);
             margin-bottom: 40px;
             font-weight: 300;
-        }
-
-        .hero-content p strong {
-            color: var(--color-texto-mutado);
         }
 
         .cta-group {
@@ -171,25 +161,25 @@
         }
 
         .btn-primary {
-            background-color: var(--color-accent);
-            color: var(--color-texto-claro);
+            background: linear-gradient(135deg, var(--color-accent), #0099cc);
+            color: var(--bg-principal);
             padding: 15px 32px;
             border-radius: 8px;
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             font-size: 16px;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
             transition: var(--transition-suave);
         }
 
         .btn-primary:hover {
-            background-color: var(--color-accent-hover);
             transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 210, 255, 0.5);
         }
 
         .btn-secondary {
-            background-color: transparent;
-            border: 2px solid var(--color-texto-claro);
+            background-color: var(--bg-secundario);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--color-texto-claro);
             padding: 15px 32px;
             border-radius: 8px;
@@ -197,12 +187,11 @@
             text-decoration: none;
             font-size: 16px;
             transition: var(--transition-suave);
-            opacity: 0.9;
         }
 
         .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            opacity: 1;
+            border-color: var(--color-verde-ia);
+            color: var(--color-verde-ia);
         }
 
         /* --- SECCIONES GENERALES --- */
@@ -218,7 +207,7 @@
         }
 
         .section-header span {
-            color: var(--color-accent);
+            color: var(--color-marron-tierra);
             text-transform: uppercase;
             font-size: 13px;
             font-weight: 700;
@@ -242,25 +231,25 @@
 
         .ia-text h3 {
             font-size: 26px;
-            color: var(--color-texto-mutado);
+            color: var(--color-texto-claro);
             margin-bottom: 15px;
         }
 
         .ia-text p {
-            color: var(--color-gris-detalle);
+            color: var(--color-texto-mutado);
             font-size: 16px;
             margin-bottom: 20px;
             font-weight: 300;
-        }
-
-        .ia-features {
-            margin-top: 30px;
         }
 
         .feature-item-ia {
             display: flex;
             gap: 15px;
             margin-bottom: 20px;
+            background: var(--bg-secundario);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--color-verde-ia);
         }
 
         .feature-item-ia div h4 {
@@ -272,16 +261,11 @@
         .feature-item-ia div p {
             font-size: 14px;
             margin-bottom: 0;
-        }
-
-        .ia-image-container {
-            position: relative;
-            text-align: center;
+            color: var(--color-gris-detalle);
         }
 
         .ia-img {
             width: 100%;
-            max-width: 500px;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             border: 1px solid rgba(255,255,255,0.05);
@@ -300,21 +284,17 @@
             padding: 40px 30px;
             border: 1px solid rgba(255, 255, 255, 0.03);
             transition: var(--transition-suave);
-            position: relative;
-            overflow: hidden;
+            border-top: 4px solid var(--color-accent);
         }
 
         .card-servicio:hover {
             transform: translateY(-5px);
-            border-color: rgba(255, 107, 53, 0.3);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.1);
         }
 
-        .card-servicio img {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 25px;
-            object-fit: contain;
+        .icon-emoji {
+            font-size: 45px;
+            margin-bottom: 20px;
         }
 
         .card-servicio h3 {
@@ -324,14 +304,14 @@
         }
 
         .card-servicio p {
-            color: var(--color-gris-detalle);
+            color: var(--color-texto-mutado);
             font-size: 14px;
             font-weight: 300;
         }
 
         /* --- SECCIÓN HORARIO --- */
         .bg-horario {
-            background: linear-gradient(rgba(31, 40, 51, 0.6), rgba(11, 12, 16, 0.9)), url('images/horario-bg.jpg');
+            background: linear-gradient(rgba(34, 38, 45, 0.8), rgba(22, 24, 28, 0.95)), url('https://images.unsplash.com/photo-1506869640319-ce1a24fd96eb?auto=format&fit=crop&q=80&w=1200');
             background-size: cover;
             background-position: center;
             border-radius: 16px;
@@ -343,22 +323,23 @@
         .bg-horario h3 {
             font-size: 28px;
             margin-bottom: 15px;
-            color: var(--color-texto-mutado);
+            color: var(--color-texto-claro);
         }
 
         .bg-horario p {
             font-size: 16px;
             max-width: 600px;
             margin: 0 auto 30px auto;
-            color: var(--color-gris-detalle);
+            color: var(--color-texto-mutado);
         }
 
         .reloj-digital {
             font-size: 36px;
             font-weight: 700;
-            color: var(--color-accent);
+            color: var(--color-verde-ia);
             letter-spacing: 2px;
             margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 230, 118, 0.3);
         }
 
         /* --- SECCIÓN CONTACTO --- */
@@ -381,7 +362,7 @@
             background-color: rgba(255,255,255,0.02);
             padding: 20px;
             border-radius: 8px;
-            border-left: 4px solid var(--color-texto-mutado);
+            border-left: 4px solid var(--color-marron-tierra);
         }
 
         .metodo-contacto h4 {
@@ -427,7 +408,7 @@
         }
 
         .btn-enviar-form {
-            background-color: var(--color-texto-mutado);
+            background: var(--color-accent);
             color: var(--bg-principal);
             border: none;
             padding: 15px;
@@ -439,12 +420,12 @@
         }
 
         .btn-enviar-form:hover {
-            background-color: var(--color-texto-claro);
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
         }
 
         /* --- FOOTER --- */
         footer {
-            background-color: #050608;
+            background-color: #0d0f12;
             padding: 30px 20px;
             text-align: center;
             border-top: 1px solid rgba(255,255,255,0.05);
@@ -452,19 +433,19 @@
             color: var(--color-gris-detalle);
         }
 
-        /* --- BOTÓN FLOTANTE WHATSAPP INTERACTIVO (UX ACCIÓN) --- */
+        /* --- BOTÓN FLOTANTE WHATSAPP --- */
         .whatsapp-flotante {
             position: fixed;
             width: 60px;
             height: 60px;
             bottom: 40px;
             right: 40px;
-            background-color: #25d366;
+            background-color: var(--color-verde-ia);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.4);
             z-index: 1000;
             transition: var(--transition-suave);
             text-decoration: none;
@@ -475,7 +456,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: #25d366;
+            background-color: var(--color-verde-ia);
             border-radius: 50%;
             z-index: -1;
             animation: pulso-whatsapp 2s infinite;
@@ -483,7 +464,7 @@
 
         .whatsapp-flotante:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+            box-shadow: 0 6px 20px rgba(0, 230, 118, 0.6);
         }
 
         .whatsapp-flotante img {
@@ -492,49 +473,25 @@
         }
 
         @keyframes pulso-whatsapp {
-            0% {
-                transform: scale(1);
-                opacity: 0.5;
-            }
-            100% {
-                transform: scale(1.4);
-                opacity: 0;
-            }
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(1.4); opacity: 0; }
         }
 
-        /* --- RESPONSIVIDAD (MOBILE OPTIMIZATION) --- */
         @media (max-width: 768px) {
-            nav ul {
-                display: none; /* Simplificación mobile en UX básica */
-            }
-            .grid-ia, .grid-contacto {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .hero-content h2 {
-                font-size: 32px;
-            }
-            .hero-content p {
-                font-size: 15px;
-            }
-            .bg-horario {
-                padding: 30px 20px;
-            }
+            nav ul { display: none; }
+            .grid-ia, .grid-contacto { grid-template-columns: 1fr; gap: 40px; }
+            .hero-content h2 { font-size: 32px; }
+            .hero-content p { font-size: 15px; }
+            .bg-horario { padding: 30px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- MENÚ DE NAVEGACIÓN FIJA -->
     <header>
         <div class="nav-container">
             <a href="#inicio" class="logo-area">
-                <!-- Espacio automático para tu imagen del Logo -->
-                <img src="images/logo.png" alt="Logo" class="logo-img">
-                <div class="logo-texto">
-                    <h1>LOUP</h1>
-                    <span>Supply Co.</span>
-                </div>
+                <img src="logo.png" alt="Logo LOUP" class="logo-img" onerror="this.src='https://placehold.co/300x100/22262d/00d2ff?text=TU+LOGO+AQUI'">
             </a>
             <nav>
                 <ul>
@@ -549,7 +506,6 @@
         </div>
     </header>
 
-    <!-- SECCIÓN 1: INICIO (HERO) -->
     <section id="inicio">
         <div class="hero-content">
             <h2>La nueva era de la logística E-commerce.</h2>
@@ -561,7 +517,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 2: QUIÉNES SOMOS (CON ENFOQUE EN IA) -->
     <section id="quienes-somos" class="bloque-contenido">
         <div class="section-header">
             <span>Visión Tecnológica</span>
@@ -573,74 +528,67 @@
                 <p>En LOUP Supply Co. transformamos la última milla. No solo trasladamos paquetes; fusionamos ingeniería avanzada con algoritmos predictivos para erradicar las fricciones logísticas tradicionales en la región.</p>
                 <div class="ia-features">
                     <div class="feature-item-ia">
-                        <div style="color: var(--color-accent); font-size: 24px;">🤖</div>
+                        <div style="font-size: 24px;">🤖</div>
                         <div>
                             <h4>Ruteo y Geolocalización IA</h4>
-                            <p>Nuestra IA calcula las rutas dinámicas más rápidas y eficientes en Huacho, reduciendo tiempos de espera y combustible.</p>
+                            <p>Nuestra IA calcula las rutas dinámicas más rápidas y eficientes en Huacho.</p>
                         </div>
                     </div>
                     <div class="feature-item-ia">
-                        <div style="color: var(--color-accent); font-size: 24px;">📊</div>
+                        <div style="font-size: 24px;">📊</div>
                         <div>
                             <h4>Analítica Predictiva</h4>
-                            <p>Proyectamos ventanas horarias de entrega exactas mediante análisis de datos para asegurar el éxito al primer intento.</p>
+                            <p>Proyectamos ventanas horarias exactas para asegurar el éxito al primer intento.</p>
                         </div>
                     </div>
                     <div class="feature-item-ia">
-                        <div style="color: var(--color-accent); font-size: 24px;">💬</div>
+                        <div style="font-size: 24px;">💬</div>
                         <div>
                             <h4>Chatbots Automatizados</h4>
-                            <p>Respuestas e informes de trazabilidad inmediatos para tus clientes finales a través de integraciones conversacionales Inteligentes.</p>
+                            <p>Respuestas de trazabilidad inmediatas mediante integraciones inteligentes.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="ia-image-container">
-                <!-- Espacio automático para imagen descriptiva de tecnología -->
-                <img src="images/tecnologia-ia.jpg" alt="Tecnología Inteligencia Artificial LOUP" class="ia-img">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" alt="IA Logistics" class="ia-img">
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN 3: SERVICIOS -->
     <section id="servicios" class="bloque-contenido">
         <div class="section-header">
             <span>Soluciones Logísticas</span>
             <h2>Nuestros Servicios Premium</h2>
         </div>
         <div class="grid-servicios">
-            <!-- Tarjeta 1 -->
             <div class="card-servicio">
-                <img src="images/icon-courier.png" alt="Icono Courier">
-                <h3>Servicio de Courier Regional</h3>
-                <p>Traslado de paquetería local de alta prioridad con control digital de firmas y confirmación inmediata del estado de entrega.</p>
+                <div class="icon-emoji">📦</div>
+                <h3 style="color: var(--color-accent);">Servicio Regional</h3>
+                <p>Traslado de paquetería local de alta prioridad con confirmación inmediata del estado de entrega.</p>
             </div>
-            <!-- Tarjeta 2 -->
             <div class="card-servicio">
-                <img src="images/icon-lastmile.png" alt="Icono Last Mile">
-                <h3>Última Milla E-commerce</h3>
-                <p>Especialistas en la distribución y desempaque de importaciones masivas de plataformas asiáticas como Temu y Shein directamente al cliente final.</p>
+                <div class="icon-emoji">🚚</div>
+                <h3 style="color: var(--color-verde-ia);">Última Milla E-commerce</h3>
+                <p>Distribución y ruteo final de importaciones de plataformas asiáticas como Temu y Shein.</p>
             </div>
-            <!-- Tarjeta 3 (Diseñada estratégicamente según el requerimiento de negocio) -->
             <div class="card-servicio">
-                <img src="images/icon-cod.png" alt="Icono Contraentrega">
-                <h3>Recaudo Contraentrega (COD)</h3>
-                <p>Tus clientes pagan al recibir el paquete (Efectivo, Yape/Plin). Nosotros custodiamos el flujo y te liquidamos de forma automatizada en tiempo récord.</p>
+                <div class="icon-emoji">💳</div>
+                <h3 style="color: var(--color-marron-tierra);">Recaudo Contraentrega (COD)</h3>
+                <p>Tus clientes pagan al recibir (Efectivo, Yape/Plin). Custodiamos el flujo y te liquidamos automatizadamente.</p>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN 4: HORARIO DE TRABAJO -->
     <section id="horario" class="bloque-contenido">
         <div class="bg-horario">
             <h3>Disponibilidad Absoluta</h3>
-            <p>La puntualidad logística no descansa. Ponemos a tu disposición un equipo coordinado mediante plataformas inteligentes listo para procesar tus solicitudes.</p>
+            <p>La puntualidad no descansa. Equipo coordinado mediante plataformas inteligentes.</p>
             <div class="reloj-digital">07:00 AM - 06:00 PM</div>
             <p style="font-size: 14px; margin-bottom: 0;">Lunes a Sábado — Atención fluida y soporte directo en tiempo real.</p>
         </div>
     </section>
 
-    <!-- SECCIÓN 5: CONTACTO -->
     <section id="contacto" class="bloque-contenido">
         <div class="section-header">
             <span>Canales de Enlace</span>
@@ -652,7 +600,7 @@
                     <div style="font-size: 24px;">📍</div>
                     <div>
                         <h4>Centro Operativo</h4>
-                        <p>Huacho, Provincia de Huaura, Perú</p>
+                        <p>Huacho, Provincia de Huaura</p>
                     </div>
                 </div>
                 <div class="metodo-contacto">
@@ -666,7 +614,7 @@
                     <div style="font-size: 24px;">💬</div>
                     <div>
                         <h4>Central WhatsApp</h4>
-                        <p><a href="https://wa.me/51955539736" target="_blank">+51 987 654 321</a></p>
+                        <p><a href="https://wa.me/51955539736" target="_blank">+51 955 539 736</a></p>
                     </div>
                 </div>
             </div>
@@ -679,7 +627,7 @@
                         <input type="tel" placeholder="Número de Celular de Contacto" required>
                     </div>
                     <div class="form-group">
-                        <textarea rows="4" placeholder="Cuéntanos: ¿Cuántos envíos diarios aproximados manejas de Temu o Shein?" required></textarea>
+                        <textarea rows="4" placeholder="¿Cuántos envíos diarios aproximados manejas de Temu o Shein?" required></textarea>
                     </div>
                     <button type="submit" class="btn-enviar-form">Enviar Solicitud</button>
                 </form>
@@ -687,13 +635,10 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 LOUP Supply Co. - Todos los derechos reservados. | Logística Inteligente y Distribución.</p>
+        <p>&copy; 2026 LOUP Supply Co. - Logística Inteligente y Distribución.</p>
     </footer>
 
-    <!-- LLAMADO DE ACCIÓN INTERACTIVO A WHATSAPP -->
-    <!-- Reemplaza el número 51955539736 con tu número real de celular del negocio -->
     <a href="https://wa.me/51955539736?text=Hola%20LOUP%20Supply,%20vengo%20de%20la%20página%20web%20y%20quiero%20coordinar%20mis%20envíos%20ecommerce." class="whatsapp-flotante" target="_blank" title="Escríbenos a WhatsApp">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon">
     </a>
