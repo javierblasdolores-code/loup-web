@@ -8,19 +8,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos Base - Paleta "Husky Tech" (Plomo, Blanco, Azul Hielo, Verde y Marrón) */
+        /* Estilos Base - Paleta "Husky Light Mode" */
         :root {
-            --bg-principal: #16181c; 
-            --bg-secundario: #22262d; 
-            --color-texto-claro: #f4f5f7; 
-            --color-texto-mutado: #a1aab5; 
-            --color-gris-detalle: #8b95a1;
-            --color-accent: #00d2ff; /* Azul Hielo (Ojo 1) */
-            --color-accent-hover: #00b8e6;
-            --color-verde-ia: #00e676; /* Verde Esmeralda (Ojo 2) */
-            --color-marron-tierra: #c78b5d; /* Marrón (Ojo 3) */
+            --bg-principal: #ffffff; /* Blanco nieve (Pelaje principal) */
+            --bg-secundario: #f4f6f8; /* Plomo muy claro (Detalles del pelaje) */
+            --color-texto-principal: #1e293b; /* Pizarra oscuro para lectura elegante */
+            --color-texto-mutado: #64748b; /* Plomo medio para textos secundarios */
+            --color-gris-detalle: #cbd5e1; /* Gris claro para bordes */
+            
+            /* Acentos adaptados para brillar sobre fondo blanco */
+            --color-accent: #0077b6; /* Azul Hielo profundo (Ojo 1) */
+            --color-accent-hover: #0096c7;
+            --color-verde-ia: #00a859; /* Verde Esmeralda oscuro (Ojo 2) */
+            --color-marron-tierra: #b36b39; /* Marrón cálido (Ojo 3) */
+            
             --fuente-premium: 'Lexend', sans-serif;
             --transition-suave: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --sombra-elegante: 0 10px 30px rgba(0, 0, 0, 0.06);
         }
 
         * {
@@ -33,7 +37,7 @@
             scroll-behavior: smooth;
             font-family: var(--fuente-premium);
             background-color: var(--bg-principal);
-            color: var(--color-texto-claro);
+            color: var(--color-texto-principal);
         }
 
         body {
@@ -47,11 +51,11 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(22, 24, 28, 0.85);
+            background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid var(--color-gris-detalle);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         }
 
         .nav-container {
@@ -68,7 +72,6 @@
             align-items: center;
             gap: 12px;
             text-decoration: none;
-            color: var(--color-texto-claro);
         }
 
         .logo-img {
@@ -86,27 +89,25 @@
         }
 
         nav ul li a {
-            color: var(--color-texto-claro);
+            color: var(--color-texto-principal);
             text-decoration: none;
             font-size: 14px;
-            font-weight: 400;
+            font-weight: 600;
             transition: var(--transition-suave);
-            opacity: 0.8;
         }
 
         nav ul li a:hover {
             color: var(--color-accent);
-            opacity: 1;
         }
 
         .btn-cotizar-header {
             background-color: transparent;
-            border: 1px solid var(--color-accent);
+            border: 2px solid var(--color-accent);
             color: var(--color-accent);
-            padding: 8px 16px;
+            padding: 8px 18px;
             border-radius: 6px;
             font-size: 13px;
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             transition: var(--transition-suave);
         }
@@ -114,7 +115,7 @@
         .btn-cotizar-header:hover {
             background-color: var(--color-accent);
             color: var(--bg-principal);
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 119, 182, 0.3);
         }
 
         /* --- SECCIÓN HERO (INICIO) --- */
@@ -124,8 +125,8 @@
             align-items: center;
             justify-content: center;
             padding: 120px 20px 80px 20px;
-            /* Imagen en la nube */
-            background: linear-gradient(135deg, rgba(22,24,28,0.95) 20%, rgba(34,38,45,0.7) 100%), url('https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=1920');
+            /* Gradiente blanco translúcido sobre imagen de logística moderna */
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 30%, rgba(244,246,248,0.8) 100%), url('https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=1920');
             background-size: cover;
             background-position: center;
             text-align: center;
@@ -136,9 +137,9 @@
         }
 
         .hero-content h2 {
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 700;
-            line-height: 1.2;
+            line-height: 1.15;
             margin-bottom: 20px;
             letter-spacing: -1px;
             background: linear-gradient(to right, var(--color-accent), var(--color-verde-ia));
@@ -148,9 +149,13 @@
 
         .hero-content p {
             font-size: 18px;
-            color: var(--color-texto-claro);
+            color: var(--color-texto-mutado);
             margin-bottom: 40px;
-            font-weight: 300;
+            font-weight: 400;
+        }
+
+        .hero-content p strong {
+            color: var(--color-texto-principal);
         }
 
         .cta-group {
@@ -161,27 +166,27 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--color-accent), #0099cc);
-            color: var(--bg-principal);
-            padding: 15px 32px;
+            background: linear-gradient(135deg, var(--color-accent), #0096c7);
+            color: #ffffff;
+            padding: 15px 35px;
             border-radius: 8px;
             font-weight: 700;
             text-decoration: none;
             font-size: 16px;
-            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 119, 182, 0.25);
             transition: var(--transition-suave);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 210, 255, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 119, 182, 0.4);
         }
 
         .btn-secondary {
-            background-color: var(--bg-secundario);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--color-texto-claro);
-            padding: 15px 32px;
+            background-color: var(--bg-principal);
+            border: 2px solid var(--color-gris-detalle);
+            color: var(--color-texto-principal);
+            padding: 15px 35px;
             border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
@@ -209,7 +214,7 @@
         .section-header span {
             color: var(--color-marron-tierra);
             text-transform: uppercase;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 700;
             letter-spacing: 2px;
             display: block;
@@ -217,8 +222,9 @@
         }
 
         .section-header h2 {
-            font-size: 36px;
+            font-size: 38px;
             font-weight: 700;
+            color: var(--color-texto-principal);
         }
 
         /* --- SECCIÓN QUIENES SOMOS --- */
@@ -230,48 +236,53 @@
         }
 
         .ia-text h3 {
-            font-size: 26px;
-            color: var(--color-texto-claro);
+            font-size: 28px;
+            color: var(--color-texto-principal);
             margin-bottom: 15px;
         }
 
         .ia-text p {
             color: var(--color-texto-mutado);
             font-size: 16px;
-            margin-bottom: 20px;
-            font-weight: 300;
+            margin-bottom: 25px;
         }
 
         .feature-item-ia {
             display: flex;
             gap: 15px;
             margin-bottom: 20px;
-            background: var(--bg-secundario);
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 3px solid var(--color-verde-ia);
+            background: var(--bg-principal);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--color-verde-ia);
+            box-shadow: var(--sombra-elegante);
         }
 
         .feature-item-ia div h4 {
             font-size: 16px;
-            font-weight: 600;
-            color: var(--color-texto-claro);
+            font-weight: 700;
+            color: var(--color-texto-principal);
+            margin-bottom: 5px;
         }
 
         .feature-item-ia div p {
             font-size: 14px;
             margin-bottom: 0;
-            color: var(--color-gris-detalle);
+            color: var(--color-texto-mutado);
         }
 
         .ia-img {
             width: 100%;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: var(--sombra-elegante);
         }
 
         /* --- SECCIÓN SERVICIOS --- */
+        #servicios {
+            background-color: var(--bg-secundario);
+            border-radius: 20px;
+        }
+
         .grid-servicios {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -279,17 +290,17 @@
         }
 
         .card-servicio {
-            background-color: var(--bg-secundario);
+            background-color: var(--bg-principal);
             border-radius: 12px;
             padding: 40px 30px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
             transition: var(--transition-suave);
             border-top: 4px solid var(--color-accent);
+            box-shadow: var(--sombra-elegante);
         }
 
         .card-servicio:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 119, 182, 0.15);
         }
 
         .icon-emoji {
@@ -300,30 +311,31 @@
         .card-servicio h3 {
             font-size: 22px;
             margin-bottom: 15px;
-            font-weight: 600;
+            font-weight: 700;
+            color: var(--color-texto-principal);
         }
 
         .card-servicio p {
             color: var(--color-texto-mutado);
-            font-size: 14px;
-            font-weight: 300;
+            font-size: 15px;
         }
 
         /* --- SECCIÓN HORARIO --- */
         .bg-horario {
-            background: linear-gradient(rgba(34, 38, 45, 0.8), rgba(22, 24, 28, 0.95)), url('https://images.unsplash.com/photo-1506869640319-ce1a24fd96eb?auto=format&fit=crop&q=80&w=1200');
+            background: linear-gradient(rgba(244, 246, 248, 0.95), rgba(255, 255, 255, 0.95)), url('https://images.unsplash.com/photo-1506869640319-ce1a24fd96eb?auto=format&fit=crop&q=80&w=1200');
             background-size: cover;
             background-position: center;
             border-radius: 16px;
             padding: 60px;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid var(--color-gris-detalle);
+            box-shadow: var(--sombra-elegante);
         }
 
         .bg-horario h3 {
-            font-size: 28px;
+            font-size: 32px;
             margin-bottom: 15px;
-            color: var(--color-texto-claro);
+            color: var(--color-texto-principal);
         }
 
         .bg-horario p {
@@ -334,12 +346,11 @@
         }
 
         .reloj-digital {
-            font-size: 36px;
+            font-size: 42px;
             font-weight: 700;
             color: var(--color-verde-ia);
             letter-spacing: 2px;
             margin-bottom: 10px;
-            text-shadow: 0 0 20px rgba(0, 230, 118, 0.3);
         }
 
         /* --- SECCIÓN CONTACTO --- */
@@ -359,23 +370,24 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            background-color: rgba(255,255,255,0.02);
+            background-color: var(--bg-secundario);
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
             border-left: 4px solid var(--color-marron-tierra);
         }
 
         .metodo-contacto h4 {
-            font-size: 14px;
-            color: var(--color-gris-detalle);
+            font-size: 13px;
+            color: var(--color-texto-mutado);
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-weight: 700;
         }
 
         .metodo-contacto p {
             font-size: 18px;
             font-weight: 600;
-            color: var(--color-texto-claro);
+            color: var(--color-texto-principal);
         }
 
         .metodo-contacto a {
@@ -387,50 +399,58 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
+            background-color: var(--bg-principal);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--sombra-elegante);
+            border: 1px solid var(--color-gris-detalle);
         }
 
         .form-group input, .form-group textarea {
             width: 100%;
             background-color: var(--bg-secundario);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid var(--color-gris-detalle);
             padding: 15px;
-            border-radius: 6px;
-            color: var(--color-texto-claro);
+            border-radius: 8px;
+            color: var(--color-texto-principal);
             font-family: var(--fuente-premium);
-            font-size: 14px;
+            font-size: 15px;
             transition: var(--transition-suave);
         }
 
         .form-group input:focus, .form-group textarea:focus {
             outline: none;
             border-color: var(--color-accent);
-            background-color: rgba(31, 40, 51, 0.8);
+            background-color: var(--bg-principal);
+            box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.1);
         }
 
         .btn-enviar-form {
             background: var(--color-accent);
-            color: var(--bg-principal);
+            color: #ffffff;
             border: none;
-            padding: 15px;
-            border-radius: 6px;
+            padding: 16px;
+            border-radius: 8px;
             font-weight: 700;
-            font-size: 15px;
+            font-size: 16px;
             cursor: pointer;
             transition: var(--transition-suave);
         }
 
         .btn-enviar-form:hover {
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+            background-color: var(--color-accent-hover);
+            box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
         }
 
         /* --- FOOTER --- */
         footer {
-            background-color: #0d0f12;
-            padding: 30px 20px;
+            background-color: var(--bg-secundario);
+            padding: 40px 20px;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            font-size: 13px;
-            color: var(--color-gris-detalle);
+            border-top: 1px solid var(--color-gris-detalle);
+            font-size: 14px;
+            color: var(--color-texto-mutado);
+            font-weight: 600;
         }
 
         /* --- BOTÓN FLOTANTE WHATSAPP --- */
@@ -440,12 +460,12 @@
             height: 60px;
             bottom: 40px;
             right: 40px;
-            background-color: var(--color-verde-ia);
+            background-color: #25D366;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.4);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
             z-index: 1000;
             transition: var(--transition-suave);
             text-decoration: none;
@@ -456,7 +476,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: var(--color-verde-ia);
+            background-color: #25D366;
             border-radius: 50%;
             z-index: -1;
             animation: pulso-whatsapp 2s infinite;
@@ -464,12 +484,13 @@
 
         .whatsapp-flotante:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0, 230, 118, 0.6);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
         }
 
         .whatsapp-flotante img {
-            width: 32px;
-            height: 32px;
+            width: 35px;
+            height: 35px;
+            filter: brightness(0) invert(1); /* Asegura que el logo de WA sea blanco puro */
         }
 
         @keyframes pulso-whatsapp {
@@ -480,9 +501,9 @@
         @media (max-width: 768px) {
             nav ul { display: none; }
             .grid-ia, .grid-contacto { grid-template-columns: 1fr; gap: 40px; }
-            .hero-content h2 { font-size: 32px; }
-            .hero-content p { font-size: 15px; }
-            .bg-horario { padding: 30px 20px; }
+            .hero-content h2 { font-size: 36px; }
+            .hero-content p { font-size: 16px; }
+            .bg-horario { padding: 40px 20px; }
         }
     </style>
 </head>
@@ -491,7 +512,8 @@
     <header>
         <div class="nav-container">
             <a href="#inicio" class="logo-area">
-                <img src="logo.png" alt="Logo LOUP" class="logo-img" onerror="this.src='https://placehold.co/300x100/22262d/00d2ff?text=TU+LOGO+AQUI'">
+                <!-- Recuadro en modo claro hasta que subas tu logo real -->
+                <img src="logo.png" alt="Logo LOUP" class="logo-img" onerror="this.src='https://placehold.co/300x100/ffffff/0077b6?text=TU+LOGO+AQUI'">
             </a>
             <nav>
                 <ul>
