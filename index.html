@@ -10,15 +10,12 @@
     <style>
         /* Estilos Base - UI/UX Nivel Apple / Minimalista */
         :root {
-            --bg-body: #f5f5f7; /* Gris ultraclaro de Apple */
-            --bg-card: #ffffff; /* Blanco puro para tarjetas */
-            --text-main: #1d1d1f; /* Negro suave para lectura */
-            --text-muted: #86868b; /* Gris plomo para detalles */
-            
-            /* Colores Husky vibrantes para botones y acentos */
-            --color-azul: #0066cc; /* Azul iOS */
-            --color-verde: #34c759; /* Verde iOS */
-            
+            --bg-body: #f5f5f7; 
+            --bg-card: #ffffff; 
+            --text-main: #1d1d1f; 
+            --text-muted: #86868b; 
+            --color-azul: #0066cc; 
+            --color-verde: #34c759; 
             --fuente-premium: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             --transition-suave: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             --sombra-apple: 0 4px 24px rgba(0, 0, 0, 0.04);
@@ -37,293 +34,122 @@
 
         body { overflow-x: hidden; line-height: 1.5; }
 
-        /* --- NAVEGACIÓN ESTILO MAC (Glassmorphism) --- */
+        /* --- NAVEGACIÓN ESTILO MAC --- */
         header {
-            position: fixed;
-            top: 0; left: 0; width: 100%;
+            position: fixed; top: 0; left: 0; width: 100%;
             background-color: rgba(255, 255, 255, 0.8);
             backdrop-filter: saturate(180%) blur(20px);
             -webkit-backdrop-filter: saturate(180%) blur(20px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
-        .nav-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 20px;
-        }
-
+        .nav-container { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
         .logo-img { width: 110px; height: auto; max-height: 40px; object-fit: contain; }
-
         nav ul { display: flex; list-style: none; gap: 30px; align-items: center; }
-
-        nav ul li a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 400;
-            letter-spacing: -0.2px;
-            transition: var(--transition-suave);
-        }
-
+        nav ul li a { color: var(--text-main); text-decoration: none; font-size: 13px; font-weight: 400; transition: var(--transition-suave); }
         nav ul li a:hover { color: var(--color-azul); }
-
+        
         .btn-cotizar-header {
-            background-color: var(--color-azul);
-            color: #fff;
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition-suave);
+            background-color: var(--color-azul); color: #fff; padding: 8px 18px; border-radius: 20px;
+            font-size: 12px; font-weight: 600; text-decoration: none; transition: var(--transition-suave);
         }
-
         .btn-cotizar-header:hover { background-color: #005bb5; transform: scale(1.02); }
 
-        /* --- INICIO (HERO ULTRA LIMPIO) --- */
+        /* --- INICIO (HERO) --- */
         #inicio {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 140px 20px 80px 20px;
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            padding: 140px 20px 80px 20px; text-align: center;
             background: linear-gradient(180deg, rgba(245,245,247,0.4) 0%, var(--bg-body) 100%), url('https://images.unsplash.com/photo-1586528116311-ad8ed7c80a30?auto=format&fit=crop&q=80&w=1920') top/cover no-repeat;
-            text-align: center;
         }
 
         .hero-content {
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            padding: 50px;
-            border-radius: 30px;
-            box-shadow: var(--sombra-apple);
-            border: 1px solid rgba(255,255,255,0.5);
+            max-width: 800px; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px);
+            padding: 50px; border-radius: 30px; box-shadow: var(--sombra-apple); border: 1px solid rgba(255,255,255,0.5);
         }
 
-        .hero-content h2 {
-            font-size: 56px;
-            font-weight: 700;
-            line-height: 1.05;
-            margin-bottom: 20px;
-            letter-spacing: -1.5px;
-            color: var(--text-main);
-        }
-
-        .hero-content h2 span {
-            background: linear-gradient(90deg, var(--color-azul), var(--color-verde));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-content p {
-            font-size: 19px;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            font-weight: 400;
-            letter-spacing: -0.3px;
-        }
-
+        .hero-content h2 { font-size: 56px; font-weight: 700; line-height: 1.05; margin-bottom: 20px; letter-spacing: -1.5px; }
+        .hero-content h2 span { background: linear-gradient(90deg, var(--color-azul), var(--color-verde)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-content p { font-size: 19px; color: var(--text-muted); margin-bottom: 40px; letter-spacing: -0.3px; }
+        
         .cta-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-
-        .btn-primary {
-            background-color: var(--text-main);
-            color: #ffffff;
-            padding: 16px 32px;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 15px;
-            transition: var(--transition-suave);
-        }
-
+        .btn-primary { background-color: var(--text-main); color: #ffffff; padding: 16px 32px; border-radius: 30px; font-weight: 600; text-decoration: none; transition: var(--transition-suave); }
         .btn-primary:hover { background-color: #000000; transform: translateY(-2px); box-shadow: var(--sombra-apple-hover); }
-
-        .btn-secondary {
-            background-color: transparent;
-            border: 1px solid var(--text-main);
-            color: var(--text-main);
-            padding: 16px 32px;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 15px;
-            transition: var(--transition-suave);
-        }
-
+        .btn-secondary { background-color: transparent; border: 1px solid var(--text-main); color: var(--text-main); padding: 16px 32px; border-radius: 30px; font-weight: 600; text-decoration: none; transition: var(--transition-suave); }
         .btn-secondary:hover { background-color: var(--text-main); color: #fff; }
 
         /* --- SECCIONES GENERALES --- */
         section.bloque-contenido { padding: 100px 20px; max-width: 1000px; margin: 0 auto; }
-
         .section-header { text-align: center; margin-bottom: 70px; }
+        .section-header h2 { font-size: 42px; font-weight: 700; letter-spacing: -1px; color: var(--text-main); }
 
-        .section-header h2 {
-            font-size: 42px;
-            font-weight: 700;
-            letter-spacing: -1px;
-            color: var(--text-main);
+        /* --- NUEVA SECCIÓN: INFRAESTRUCTURA (IMÁGENES ALTERNADAS) --- */
+        .feature-row {
+            display: flex; align-items: center; gap: 60px; margin-bottom: 80px;
         }
+        .feature-row:nth-child(even) { flex-direction: row-reverse; } /* Intercala izquierda a derecha */
+        
+        .feature-img-wrapper {
+            flex: 1; border-radius: 24px; overflow: hidden; box-shadow: var(--sombra-apple);
+            position: relative; aspect-ratio: 4/3;
+        }
+        .feature-img-wrapper img {
+            width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.8s ease;
+        }
+        .feature-img-wrapper:hover img { transform: scale(1.05); } /* Efecto zoom premium */
+        
+        .feature-text { flex: 1; }
+        .feature-text span { color: var(--color-azul); font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 10px;}
+        .feature-text h3 { font-size: 32px; margin-bottom: 15px; font-weight: 700; line-height: 1.2; }
+        .feature-text p { color: var(--text-muted); font-size: 17px; line-height: 1.6; }
 
         /* --- QUIÉNES SOMOS --- */
-        .grid-ia {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
+        .grid-ia { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .ia-text h3 { font-size: 24px; margin-bottom: 15px; font-weight: 600; }
         .ia-text p { color: var(--text-muted); font-size: 16px; margin-bottom: 30px; }
-
-        .feature-item-ia {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .feature-icon {
-            width: 40px; height: 40px;
-            background: rgba(0, 102, 204, 0.1);
-            border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 20px; color: var(--color-azul);
-        }
-
+        .feature-item-ia { display: flex; gap: 15px; margin-bottom: 25px; }
+        .feature-icon { width: 40px; height: 40px; background: rgba(0, 102, 204, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--color-azul); }
         .feature-item-ia div h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
         .feature-item-ia div p { font-size: 14px; margin-bottom: 0; color: var(--text-muted); }
-
-        .ia-img {
-            width: 100%;
-            border-radius: 24px;
-            box-shadow: var(--sombra-apple-hover);
-        }
+        .ia-img { width: 100%; border-radius: 24px; box-shadow: var(--sombra-apple-hover); }
 
         /* --- SERVICIOS --- */
-        .grid-servicios {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-
-        .card-servicio {
-            background-color: var(--bg-card);
-            border-radius: 24px;
-            padding: 40px 30px;
-            transition: var(--transition-suave);
-            box-shadow: var(--sombra-apple);
-            border: 1px solid rgba(0,0,0,0.02);
-            text-align: left;
-        }
-
-        .card-servicio:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--sombra-apple-hover);
-        }
-
+        .grid-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .card-servicio { background-color: var(--bg-card); border-radius: 24px; padding: 40px 30px; transition: var(--transition-suave); box-shadow: var(--sombra-apple); border: 1px solid rgba(0,0,0,0.02); }
+        .card-servicio:hover { transform: translateY(-5px); box-shadow: var(--sombra-apple-hover); }
         .icon-emoji { font-size: 38px; margin-bottom: 20px; }
-
         .card-servicio h3 { font-size: 20px; margin-bottom: 12px; font-weight: 600; }
-        .card-servicio p { color: var(--text-muted); font-size: 15px; line-height: 1.4; }
+        .card-servicio p { color: var(--text-muted); font-size: 15px; }
 
-        /* --- HORARIO ESTILO WIDGET --- */
-        .bg-horario {
-            background: var(--bg-card);
-            border-radius: 30px;
-            padding: 60px;
-            text-align: center;
-            box-shadow: var(--sombra-apple);
-            border: 1px solid rgba(0,0,0,0.02);
-        }
-
-        .reloj-digital {
-            font-size: 56px;
-            font-weight: 700;
-            color: var(--text-main);
-            letter-spacing: -2px;
-            margin: 15px 0;
-        }
+        /* --- HORARIO --- */
+        .bg-horario { background: var(--bg-card); border-radius: 30px; padding: 60px; text-align: center; box-shadow: var(--sombra-apple); border: 1px solid rgba(0,0,0,0.02); }
+        .reloj-digital { font-size: 56px; font-weight: 700; color: var(--text-main); letter-spacing: -2px; margin: 15px 0; }
 
         /* --- CONTACTO --- */
-        .grid-contacto {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            background: var(--bg-card);
-            padding: 50px;
-            border-radius: 30px;
-            box-shadow: var(--sombra-apple);
-        }
-
+        .grid-contacto { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; background: var(--bg-card); padding: 50px; border-radius: 30px; box-shadow: var(--sombra-apple); }
         .info-contacto h4 { font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
         .info-contacto p { font-size: 18px; font-weight: 600; color: var(--text-main); margin-bottom: 25px; }
         .info-contacto a { color: var(--color-azul); text-decoration: none; }
-
         .form-contacto { display: flex; flex-direction: column; gap: 15px; }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            background-color: var(--bg-body);
-            border: 1px solid transparent;
-            padding: 16px;
-            border-radius: 12px;
-            color: var(--text-main);
-            font-family: var(--fuente-premium);
-            font-size: 15px;
-            transition: var(--transition-suave);
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--color-azul);
-            background-color: #fff;
-            box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
-        }
-
-        .btn-enviar-form {
-            background: var(--color-azul);
-            color: #ffffff;
-            border: none;
-            padding: 16px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            transition: var(--transition-suave);
-        }
-
+        .form-group input, .form-group textarea { width: 100%; background-color: var(--bg-body); border: 1px solid transparent; padding: 16px; border-radius: 12px; color: var(--text-main); font-family: var(--fuente-premium); font-size: 15px; transition: var(--transition-suave); }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--color-azul); background-color: #fff; box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1); }
+        .btn-enviar-form { background: var(--color-azul); color: #ffffff; border: none; padding: 16px; border-radius: 12px; font-weight: 600; font-size: 16px; cursor: pointer; transition: var(--transition-suave); }
         .btn-enviar-form:hover { background-color: #005bb5; }
 
-        /* --- FOOTER --- */
-        footer {
-            padding: 40px 20px;
-            text-align: center;
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        /* --- BOTÓN WHATSAPP --- */
-        .whatsapp-flotante {
-            position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
-            background-color: #25D366; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); z-index: 1000;
-            transition: var(--transition-suave);
-        }
+        /* --- FOOTER & WA --- */
+        footer { padding: 40px 20px; text-align: center; font-size: 13px; color: var(--text-muted); }
+        .whatsapp-flotante { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); z-index: 1000; transition: var(--transition-suave); }
         .whatsapp-flotante:hover { transform: scale(1.08); }
         .whatsapp-flotante img { width: 32px; height: 32px; filter: brightness(0) invert(1); }
 
+        /* --- RESPONSIVIDAD --- */
         @media (max-width: 768px) {
             nav ul { display: none; }
             .grid-ia, .grid-contacto { grid-template-columns: 1fr; gap: 40px; }
             .hero-content h2 { font-size: 40px; }
             .reloj-digital { font-size: 40px; }
             .grid-contacto { padding: 30px 20px; }
+            /* Ajuste para que las imágenes alternadas bajen bien en celular */
+            .feature-row, .feature-row:nth-child(even) { flex-direction: column; gap: 30px; text-align: center; }
         }
     </style>
 </head>
@@ -337,9 +163,10 @@
             <nav>
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                    <li><a href="#infraestructura">Operación</a></li>
+                    <li><a href="#quienes-somos">Tecnología</a></li>
                     <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#horario">Horarios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
             <a href="https://wa.me/51955539736?text=Hola%20LOUP%20Supply,%20quiero%20cotizar%20un%20envío%20ecommerce." target="_blank" class="btn-cotizar-header">Cotizar Envíos</a>
@@ -349,15 +176,75 @@
     <section id="inicio">
         <div class="hero-content">
             <h2>La nueva era de la <span>logística E-commerce.</span></h2>
-            <p>Cobertura estratégica especializada en toda la <strong>Provincia de Huaura e interconexión con Huacho</strong>. Seguridad extrema, precisión milimétrica y algoritmos automatizados para potenciar tus entregas de Shein y Temu.</p>
+            <p>Cobertura estratégica especializada en toda la <strong>Provincia de Huaura e interconexión con Huacho</strong>. Procesos estandarizados y algoritmos automatizados para potenciar tus entregas de Shein y Temu.</p>
             <div class="cta-group">
                 <a href="https://wa.me/51955539736?text=Hola,%20quiero%20integrar%20mi%20tienda%20con%20su%20servicio%20logístico." target="_blank" class="btn-primary">Integra tu tienda</a>
-                <a href="#servicios" class="btn-secondary">Rastrear Paquete</a>
+                <a href="#infraestructura" class="btn-secondary">Conocer Operación</a>
             </div>
         </div>
     </section>
 
-    <section id="quienes-somos" class="bloque-contenido">
+    <!-- NUEVA SECCIÓN DE IMÁGENES ALTERNADAS (INFRAESTRUCTURA) -->
+    <section id="infraestructura" class="bloque-contenido">
+        <div class="section-header">
+            <h2>Nuestra Capacidad Operativa.</h2>
+        </div>
+
+        <!-- Fila 1: Cajas / Almacén -->
+        <div class="feature-row">
+            <div class="feature-img-wrapper">
+                <!-- Imagen de Cajas/Clasificación -->
+                <img src="https://images.pexels.com/photos/4483608/pexels-photo-4483608.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Almacén de cajas e-commerce">
+            </div>
+            <div class="feature-text">
+                <span>Paso 01: Recepción</span>
+                <h3>Clasificación Inteligente</h3>
+                <p>Recepcionamos tus lotes masivos de importación. Nuestro equipo procesa, clasifica y etiqueta cada paquete con estrictos controles de calidad, asegurando que cada orden esté lista para salir a ruta sin demoras.</p>
+            </div>
+        </div>
+
+        <!-- Fila 2: Camión / Transporte -->
+        <div class="feature-row">
+            <div class="feature-img-wrapper">
+                <!-- Imagen de Camión/Flota -->
+                <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=800" alt="Flota de transporte logístico">
+            </div>
+            <div class="feature-text">
+                <span style="color: var(--color-verde);">Paso 02: Transporte</span>
+                <h3>Flota Troncal Conectada</h3>
+                <p>Nuestras unidades conectan los principales hubs logísticos con la provincia de Huaura. Movilizamos el volumen pesado mediante transporte seguro, monitoreado por GPS para garantizar la integridad de tu carga comercial.</p>
+            </div>
+        </div>
+
+        <!-- Fila 3: Motorizado / Última Milla -->
+        <div class="feature-row">
+            <div class="feature-img-wrapper">
+                <!-- Imagen de Motorizado -->
+                <img src="https://images.pexels.com/photos/4392040/pexels-photo-4392040.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Motorizado de entrega última milla">
+            </div>
+            <div class="feature-text">
+                <span>Paso 03: Distribución</span>
+                <h3>Última Milla Ágil</h3>
+                <p>Nuestra red de motorizados locales en Huacho se encarga del tramo final. Optimizamos sus rutas para sortear el tráfico y llegar a la puerta del cliente en el momento exacto, reduciendo los intentos de entrega fallidos.</p>
+            </div>
+        </div>
+
+        <!-- Fila 4: Persona con Marca / Cliente Feliz -->
+        <div class="feature-row">
+            <div class="feature-img-wrapper">
+                <!-- Imagen de Persona/Repartidor -->
+                <img src="https://images.pexels.com/photos/4393426/pexels-photo-4393426.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Representante de marca entregando paquete">
+            </div>
+            <div class="feature-text">
+                <span style="color: var(--color-verde);">Paso 04: Experiencia</span>
+                <h3>Efecto Guante Blanco</h3>
+                <p>Más que entregar un paquete de Shein o Temu, entregamos confianza. Nuestro personal capacitado es la cara visible de tu negocio, asegurando un proceso de recaudo contraentrega (COD) impecable y una sonrisa en cada destino.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIONES EXISTENTES (IA, SERVICIOS, HORARIO, CONTACTO) -->
+    <section id="quienes-somos" class="bloque-contenido" style="padding-top: 0;">
         <div class="section-header">
             <h2>Impulsados por Inteligencia Artificial.</h2>
         </div>
@@ -365,7 +252,6 @@
             <div class="ia-text">
                 <h3>El primer courier regional con visión IA</h3>
                 <p>En LOUP Supply Co. transformamos la última milla. No solo trasladamos paquetes; fusionamos ingeniería avanzada con algoritmos predictivos para erradicar las fricciones logísticas tradicionales en la región.</p>
-                
                 <div class="feature-item-ia">
                     <div class="feature-icon">🤖</div>
                     <div>
@@ -380,13 +266,6 @@
                         <p>Proyectamos ventanas horarias exactas para asegurar el éxito al primer intento.</p>
                     </div>
                 </div>
-                <div class="feature-item-ia">
-                    <div class="feature-icon">💬</div>
-                    <div>
-                        <h4>Chatbots Automatizados</h4>
-                        <p>Respuestas de trazabilidad inmediatas mediante integraciones inteligentes.</p>
-                    </div>
-                </div>
             </div>
             <div>
                 <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" alt="IA Logistics" class="ia-img">
@@ -394,7 +273,7 @@
         </div>
     </section>
 
-    <section id="servicios" class="bloque-contenido">
+    <section id="servicios" class="bloque-contenido" style="padding-top: 0;">
         <div class="section-header">
             <h2>Nuestros Servicios Premium.</h2>
         </div>
@@ -417,7 +296,7 @@
         </div>
     </section>
 
-    <section id="horario" class="bloque-contenido">
+    <section id="horario" class="bloque-contenido" style="padding-top: 0;">
         <div class="bg-horario">
             <h3 style="font-size: 24px; font-weight: 600;">Disponibilidad Absoluta</h3>
             <div class="reloj-digital">07:00 AM - 06:00 PM</div>
@@ -425,7 +304,7 @@
         </div>
     </section>
 
-    <section id="contacto" class="bloque-contenido">
+    <section id="contacto" class="bloque-contenido" style="padding-top: 0;">
         <div class="section-header">
             <h2>Inicia Operaciones con Nosotros.</h2>
         </div>
@@ -433,10 +312,8 @@
             <div class="info-contacto">
                 <h4>Centro Operativo</h4>
                 <p>Huacho, Provincia de Huaura</p>
-                
                 <h4 style="margin-top: 25px;">Correo Electrónico</h4>
                 <p><a href="mailto:contacto@loupsupply.com">contacto@loupsupply.com</a></p>
-                
                 <h4 style="margin-top: 25px;">Central WhatsApp</h4>
                 <p><a href="https://wa.me/51955539736" target="_blank">+51 955 539 736</a></p>
             </div>
