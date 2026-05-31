@@ -20,6 +20,7 @@
             --transition-suave: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             --sombra-apple: 0 4px 24px rgba(0, 0, 0, 0.04);
             --sombra-apple-hover: 0 10px 40px rgba(0, 0, 0, 0.08);
+            --sombra-tarjeta-central: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -37,7 +38,7 @@
         /* --- NAVEGACIÓN ESTILO MAC --- */
         header {
             position: fixed; top: 0; left: 0; width: 100%;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.85);
             backdrop-filter: saturate(180%) blur(20px);
             -webkit-backdrop-filter: saturate(180%) blur(20px);
             z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -46,7 +47,7 @@
         .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
         .logo-img { width: 110px; height: auto; max-height: 40px; object-fit: contain; }
         nav ul { display: flex; list-style: none; gap: 30px; align-items: center; }
-        nav ul li a { color: var(--text-main); text-decoration: none; font-size: 13px; font-weight: 400; transition: var(--transition-suave); }
+        nav ul li a { color: var(--text-main); text-decoration: none; font-size: 13px; font-weight: 500; transition: var(--transition-suave); }
         nav ul li a:hover { color: var(--color-azul); }
         
         .btn-cotizar-header {
@@ -55,36 +56,36 @@
         }
         .btn-cotizar-header:hover { background-color: #005bb5; transform: scale(1.02); }
 
-        /* --- INICIO (HERO A DOS COLUMNAS) --- */
+        /* --- INICIO (FONDO COMPLETO + TARJETA CENTRAL) --- */
         #inicio {
             min-height: 100vh;
             display: flex; align-items: center; justify-content: center;
-            padding: 120px 20px 40px 20px;
+            padding: 100px 20px 40px 20px;
+            /* Imagen de fondo que ocupa toda la pantalla con un filtro oscuro sutil */
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
         }
 
-        .hero-container {
-            max-width: 1100px; width: 100%;
-            display: flex; align-items: center; justify-content: space-between; gap: 60px;
+        .hero-content {
+            max-width: 850px; width: 100%;
+            background: rgba(255, 255, 255, 0.95); /* Tarjeta blanca estilo Apple */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 60px 40px;
+            border-radius: 30px;
+            box-shadow: var(--sombra-tarjeta-central);
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.5);
         }
 
-        .hero-text { flex: 1; text-align: left; }
-        .hero-text h2 { font-size: 52px; font-weight: 700; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1.5px; }
-        .hero-text h2 span { background: linear-gradient(90deg, var(--color-azul), var(--color-verde)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-text p { font-size: 18px; color: var(--text-muted); margin-bottom: 40px; line-height: 1.6; }
+        .hero-content h2 { font-size: 52px; font-weight: 700; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1.5px; }
+        .hero-content h2 span { background: linear-gradient(90deg, var(--color-azul), var(--color-verde)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-content p { font-size: 18px; color: var(--text-muted); margin-bottom: 40px; line-height: 1.6; max-width: 700px; margin-left: auto; margin-right: auto; }
         
-        .cta-group { display: flex; gap: 15px; flex-wrap: wrap; }
-        .btn-primary { background-color: var(--text-main); color: #ffffff; padding: 16px 32px; border-radius: 30px; font-weight: 600; text-decoration: none; transition: var(--transition-suave); }
+        .cta-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background-color: var(--text-main); color: #ffffff; padding: 16px 35px; border-radius: 30px; font-weight: 600; text-decoration: none; transition: var(--transition-suave); font-size: 15px; }
         .btn-primary:hover { background-color: #000000; transform: translateY(-2px); box-shadow: var(--sombra-apple-hover); }
-        .btn-secondary { background-color: transparent; border: 1px solid var(--text-main); color: var(--text-main); padding: 16px 32px; border-radius: 30px; font-weight: 600; text-decoration: none; transition: var(--transition-suave); }
+        .btn-secondary { background-color: transparent; border: 1px solid var(--text-main); color: var(--text-main); padding: 16px 35px; border-radius: 30px; font-weight: 600; text-decoration: none; transition: var(--transition-suave); font-size: 15px; }
         .btn-secondary:hover { background-color: var(--text-main); color: #fff; }
-
-        .hero-image-box {
-            flex: 1; position: relative;
-        }
-        .hero-image-box img {
-            width: 100%; max-height: 500px; object-fit: cover;
-            border-radius: 30px; box-shadow: var(--sombra-apple-hover);
-        }
 
         /* --- SECCIONES GENERALES --- */
         section.bloque-contenido { padding: 100px 20px; max-width: 1100px; margin: 0 auto; }
@@ -140,11 +141,9 @@
         /* --- RESPONSIVIDAD --- */
         @media (max-width: 768px) {
             nav ul { display: none; }
-            .hero-container { flex-direction: column; text-align: center; }
-            .hero-text { text-align: center; }
-            .cta-group { justify-content: center; }
+            .hero-content { padding: 40px 20px; }
+            .hero-content h2 { font-size: 40px; }
             .grid-ia, .grid-contacto { grid-template-columns: 1fr; gap: 40px; }
-            .hero-text h2 { font-size: 40px; }
             .grid-contacto { padding: 30px 20px; }
             .feature-row, .feature-row:nth-child(even) { flex-direction: column; gap: 30px; text-align: center; }
         }
@@ -171,20 +170,14 @@
         </div>
     </header>
 
-    <!-- INICIO (HERO A DOS COLUMNAS) -->
+    <!-- INICIO (FONDO COMPLETO + TARJETA CENTRAL) -->
     <section id="inicio">
-        <div class="hero-container">
-            <div class="hero-text">
-                <h2>La nueva era de la <br><span>logística E-commerce.</span></h2>
-                <p>Cobertura estratégica especializada en toda la <strong>Provincia de Huaura e interconexión con Huacho</strong>. Procesos estandarizados y algoritmos automatizados para potenciar tus entregas de Shein y Temu.</p>
-                <div class="cta-group">
-                    <a href="https://wa.me/51955539736?text=Hola,%20quiero%20integrar%20mi%20tienda%20con%20su%20servicio%20logístico." target="_blank" class="btn-primary">Integra tu tienda</a>
-                    <a href="#infraestructura" class="btn-secondary">Conocer Operación</a>
-                </div>
-            </div>
-            <!-- La imagen de la derecha (la cajita) que llena el vacío -->
-            <div class="hero-image-box">
-                <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=800" alt="Logística avanzada">
+        <div class="hero-content">
+            <h2>La nueva era de la <br><span>logística E-commerce.</span></h2>
+            <p>Cobertura estratégica especializada en toda la <strong>Provincia de Huaura e interconexión con Huacho</strong>. Procesos estandarizados y algoritmos automatizados para potenciar tus entregas de Shein y Temu.</p>
+            <div class="cta-group">
+                <a href="https://wa.me/51955539736?text=Hola,%20quiero%20integrar%20mi%20tienda%20con%20su%20servicio%20logístico." target="_blank" class="btn-primary">Integra tu tienda</a>
+                <a href="#infraestructura" class="btn-secondary">Conocer Operación</a>
             </div>
         </div>
     </section>
