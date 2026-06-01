@@ -35,17 +35,29 @@
 
         body { overflow-x: hidden; line-height: 1.5; }
 
-        /* --- NAVEGACIÓN ESTILO MAC --- */
+        /* --- NAVEGACIÓN ESTILO MAC (DINÁMICA) --- */
         header {
             position: fixed; top: 0; left: 0; width: 100%;
             background-color: rgba(255, 255, 255, 0.85);
             backdrop-filter: saturate(180%) blur(20px);
             -webkit-backdrop-filter: saturate(180%) blur(20px);
             z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition-suave);
         }
 
-        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
-        .logo-img { width: 110px; height: auto; max-height: 40px; object-fit: contain; }
+        /* Cuando el usuario hace scroll, el menú se encoge */
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        
+        /* Contenedor más ancho y logo pegado a la izquierda */
+        .nav-container { max-width: 100%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; transition: var(--transition-suave); }
+        header.scrolled .nav-container { padding: 8px 40px; }
+
+        .logo-img { width: 180px; height: auto; max-height: 65px; object-fit: contain; margin-left: -10px; transition: var(--transition-suave); }
+        header.scrolled .logo-img { max-height: 45px; }
+
         nav ul { display: flex; list-style: none; gap: 30px; align-items: center; }
         nav ul li a { color: var(--text-main); text-decoration: none; font-size: 13px; font-weight: 500; transition: var(--transition-suave); }
         nav ul li a:hover { color: var(--color-azul); }
@@ -56,7 +68,7 @@
         }
         .btn-cotizar-header:hover { background-color: #005bb5; transform: scale(1.02); }
 
-        /* --- INICIO (FONDO COMPLETO CON TU IMAGEN: fondo.jpg) --- */
+        /* --- INICIO (FONDO COMPLETO + TARJETA CENTRAL) --- */
         #inicio {
             min-height: 100vh;
             display: flex; align-items: center; justify-content: center;
@@ -146,16 +158,16 @@
             .grid-ia, .grid-contacto { grid-template-columns: 1fr; gap: 40px; }
             .grid-contacto { padding: 30px 20px; }
             .feature-row, .feature-row:nth-child(even) { flex-direction: column; gap: 30px; text-align: center; }
+            .nav-container { padding: 15px 20px; }
         }
     </style>
 </head>
 <body>
 
     <!-- MENÚ -->
-    <header>
+    <header id="main-header">
         <div class="nav-container">
             <a href="#inicio" class="logo-area">
-                <!-- Tu Logo -->
                 <img src="logo.png" alt="Logo LOUP" class="logo-img" onerror="this.src='https://placehold.co/300x100/f5f5f7/1d1d1f?text=LOUP'">
             </a>
             <nav>
@@ -208,13 +220,13 @@
                 </div>
             </div>
             <div>
-                <!-- Mantenemos la foto tecnológica genérica de Unsplash para esta sección de IA -->
-                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" alt="IA Logistics" class="ia-img">
+                <!-- Imagen local para Tecnología -->
+                <img src="tecnologia.jpg" alt="Logística con IA" class="ia-img">
             </div>
         </div>
     </section>
 
-    <!-- OPERACIÓN (TUS 4 IMÁGENES LOCALES) -->
+    <!-- OPERACIÓN -->
     <section id="infraestructura" class="bloque-contenido" style="padding-top: 0;">
         <div class="section-header">
             <h2>Nuestra Capacidad Operativa.</h2>
@@ -327,6 +339,18 @@
     <a href="https://wa.me/51955539736?text=Hola%20LOUP%20Supply" class="whatsapp-flotante" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon">
     </a>
+
+    <!-- SCRIPT PARA EL EFECTO DEL MENÚ AL HACER SCROLL -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 
 </body>
 </html>
