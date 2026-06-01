@@ -56,18 +56,18 @@
         }
         .btn-cotizar-header:hover { background-color: #005bb5; transform: scale(1.02); }
 
-        /* --- INICIO (FONDO COMPLETO + TARJETA CENTRAL) --- */
+        /* --- INICIO (FONDO COMPLETO CON TU IMAGEN: fondo.jpg) --- */
         #inicio {
             min-height: 100vh;
             display: flex; align-items: center; justify-content: center;
             padding: 100px 20px 40px 20px;
-            /* Imagen de fondo que ocupa toda la pantalla con un filtro oscuro sutil */
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
+            /* Aquí está vinculada tu imagen de fondo local */
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('fondo.jpg') center/cover no-repeat;
         }
 
         .hero-content {
             max-width: 850px; width: 100%;
-            background: rgba(255, 255, 255, 0.95); /* Tarjeta blanca estilo Apple */
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             padding: 60px 40px;
@@ -102,7 +102,7 @@
         .feature-item-ia div p { font-size: 14px; margin-bottom: 0; color: var(--text-muted); }
         .ia-img { width: 100%; border-radius: 24px; box-shadow: var(--sombra-apple-hover); }
 
-        /* --- INFRAESTRUCTURA (IMÁGENES ALTERNADAS) --- */
+        /* --- INFRAESTRUCTURA (IMÁGENES ALTERNADAS LOCALES) --- */
         .feature-row { display: flex; align-items: center; gap: 60px; margin-bottom: 80px; }
         .feature-row:nth-child(even) { flex-direction: row-reverse; } 
         .feature-img-wrapper { flex: 1; border-radius: 24px; overflow: hidden; box-shadow: var(--sombra-apple); position: relative; aspect-ratio: 4/3; }
@@ -151,10 +151,11 @@
 </head>
 <body>
 
-    <!-- MENÚ ORDENADO: Inicio > Tecnología > Operación > Servicios > Contacto -->
+    <!-- MENÚ -->
     <header>
         <div class="nav-container">
             <a href="#inicio" class="logo-area">
+                <!-- Tu Logo -->
                 <img src="logo.png" alt="Logo LOUP" class="logo-img" onerror="this.src='https://placehold.co/300x100/f5f5f7/1d1d1f?text=LOUP'">
             </a>
             <nav>
@@ -170,7 +171,7 @@
         </div>
     </header>
 
-    <!-- INICIO (FONDO COMPLETO + TARJETA CENTRAL) -->
+    <!-- INICIO (HERO) -->
     <section id="inicio">
         <div class="hero-content">
             <h2>La nueva era de la <br><span>logística E-commerce.</span></h2>
@@ -207,19 +208,21 @@
                 </div>
             </div>
             <div>
+                <!-- Mantenemos la foto tecnológica genérica de Unsplash para esta sección de IA -->
                 <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" alt="IA Logistics" class="ia-img">
             </div>
         </div>
     </section>
 
-    <!-- OPERACIÓN -->
+    <!-- OPERACIÓN (TUS 4 IMÁGENES LOCALES) -->
     <section id="infraestructura" class="bloque-contenido" style="padding-top: 0;">
         <div class="section-header">
             <h2>Nuestra Capacidad Operativa.</h2>
         </div>
         <div class="feature-row">
             <div class="feature-img-wrapper">
-                <img src="https://images.pexels.com/photos/4483608/pexels-photo-4483608.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Almacén e-commerce">
+                <!-- Imagen 1: recepcion.jpg -->
+                <img src="recepcion.jpg" alt="Clasificación Logística">
             </div>
             <div class="feature-text">
                 <span>Paso 01: Recepción</span>
@@ -229,7 +232,8 @@
         </div>
         <div class="feature-row">
             <div class="feature-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=800" alt="Flota de transporte">
+                <!-- Imagen 2: transporte.jpg -->
+                <img src="transporte.jpg" alt="Flota Troncal">
             </div>
             <div class="feature-text">
                 <span style="color: var(--color-verde);">Paso 02: Transporte</span>
@@ -239,7 +243,8 @@
         </div>
         <div class="feature-row">
             <div class="feature-img-wrapper">
-                <img src="https://images.pexels.com/photos/4392040/pexels-photo-4392040.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Motorizado de entrega">
+                <!-- Imagen 3: distribucion.jpg -->
+                <img src="distribucion.jpg" alt="Última Milla Ágil">
             </div>
             <div class="feature-text">
                 <span>Paso 03: Distribución</span>
@@ -249,7 +254,8 @@
         </div>
         <div class="feature-row">
             <div class="feature-img-wrapper">
-                <img src="https://images.pexels.com/photos/4393426/pexels-photo-4393426.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Repartidor">
+                <!-- Imagen 4: experiencia.jpg -->
+                <img src="experiencia.jpg" alt="Efecto Guante Blanco">
             </div>
             <div class="feature-text">
                 <span style="color: var(--color-verde);">Paso 04: Experiencia</span>
